@@ -136,7 +136,7 @@ export default function EnquiryForm({ context }: EnquiryFormProps) {
         {status === "submitting" ? "Sending..." : "Get My Free Quote"}
       </button>
 
-      <p className="text-xs text-navy-800/60">
+      <p className="text-xs text-navy-800/70">
         By submitting, you agree to our{" "}
         <Link href="/privacy-policy" className="underline">
           Privacy Policy

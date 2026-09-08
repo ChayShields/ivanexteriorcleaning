@@ -24,7 +24,7 @@ export default async function GoogleReviews({ limit = 3 }: { limit?: number }) {
           href={data.googleMapsUri}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-sm text-navy-800/60 underline hover:text-teal-600"
+          className="text-sm text-navy-800/70 underline hover:text-teal-600"
         >
           {data.userRatingCount} reviews on Google
         </a>
@@ -65,7 +65,7 @@ export default async function GoogleReviews({ limit = 3 }: { limit?: number }) {
           </figure>
         ))}
       </div>
-      <p className="mt-4 text-center text-xs text-navy-800/50">
+      <p className="mt-4 text-center text-xs text-navy-800/70">
         Reviews via Google
       </p>
     </div>

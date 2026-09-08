@@ -81,7 +81,7 @@ export default async function AreaPage(props: PageProps<"/areas-we-serve/[area]"
           Local to {area.name}
         </h2>
         <p className="mt-4 text-navy-800/80">{area.localContent}</p>
-        <p className="mt-4 text-sm font-medium text-navy-800/60">
+        <p className="mt-4 text-sm font-medium text-navy-800/70">
           Landmarks nearby: {area.landmarks.join(", ")}.
         </p>
       </section>

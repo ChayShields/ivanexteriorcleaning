@@ -67,7 +67,7 @@ export default function Home() {
                     className="flex items-center justify-between rounded-xl border border-navy-900/10 px-4 py-3 text-navy-900 transition-colors hover:border-teal-500 hover:bg-sand-50"
                   >
                     <span className="font-medium">{area.name}</span>
-                    <span className="text-xs text-navy-800/60">{area.role}</span>
+                    <span className="text-xs text-navy-800/70">{area.role}</span>
                   </Link>
                 </li>
               ))}

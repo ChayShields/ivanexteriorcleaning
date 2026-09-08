@@ -30,7 +30,7 @@ export default function ContactPage() {
             >
               <Phone className="h-5 w-5 text-teal-600" aria-hidden />
               <div>
-                <p className="text-sm text-navy-800/60">Call or text</p>
+                <p className="text-sm text-navy-800/70">Call or text</p>
                 <p className="font-semibold text-navy-900">{business.phone}</p>
               </div>
             </a>
@@ -40,14 +40,14 @@ export default function ContactPage() {
             >
               <Mail className="h-5 w-5 text-teal-600" aria-hidden />
               <div>
-                <p className="text-sm text-navy-800/60">Email</p>
+                <p className="text-sm text-navy-800/70">Email</p>
                 <p className="font-semibold text-navy-900">{business.email}</p>
               </div>
             </a>
             <div className="flex items-center gap-3 rounded-xl border border-navy-900/10 bg-white p-4">
               <MapPin className="h-5 w-5 text-teal-600" aria-hidden />
               <div>
-                <p className="text-sm text-navy-800/60">Based in</p>
+                <p className="text-sm text-navy-800/70">Based in</p>
                 <p className="font-semibold text-navy-900">
                   {business.addressLocality}, {business.addressRegion}
                 </p>

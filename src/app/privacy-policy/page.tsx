@@ -11,7 +11,7 @@ export default function PrivacyPolicyPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
       <h1 className="text-4xl font-bold text-navy-900">Privacy Policy</h1>
-      <p className="mt-2 text-sm text-navy-800/60">Last updated: 8 September 2026</p>
+      <p className="mt-2 text-sm text-navy-800/70">Last updated: 8 September 2026</p>
 
       <div className="prose prose-navy mt-8 flex flex-col gap-6 text-navy-800">
         <section>
@@ -80,7 +80,8 @@ export default function PrivacyPolicyPage() {
           </p>
           <ul className="mt-2 list-disc pl-6">
             <li>Google Analytics (GA4) — anonymised usage analytics, only with consent.</li>
-            <li>Resend — used to deliver enquiry form emails to us.</li>
+            <li>Brevo — used to deliver enquiry form emails to us.</li>
+            <li>Google Places API — used to display genuine customer reviews.</li>
           </ul>
         </section>
 

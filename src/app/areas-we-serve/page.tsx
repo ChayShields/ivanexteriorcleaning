@@ -28,7 +28,7 @@ export default function AreasWeServePage() {
             <AreaCard key={area.slug} area={area} />
           ))}
         </div>
-        <p className="mt-8 text-center text-sm text-navy-800/60">
+        <p className="mt-8 text-center text-sm text-navy-800/70">
           Also covering {secondaryAreas.join(", ")}. Get in touch to check
           coverage for your address.
         </p>
