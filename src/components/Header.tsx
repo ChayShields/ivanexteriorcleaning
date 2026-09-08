@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import { areas, business, services } from "@/lib/business";
@@ -14,6 +15,14 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-navy-800/10 bg-white/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
         <Link href="/" className="flex items-center gap-2" onClick={() => setMobileOpen(false)}>
+          <Image
+            src="/logo.jpg"
+            alt="Ivan's Exterior Cleaning Services logo"
+            width={40}
+            height={40}
+            className="rounded-full"
+            priority
+          />
           <span className="text-lg font-bold tracking-tight text-navy-900 sm:text-xl">
             Ivan&apos;s Exterior Cleaning
           </span>

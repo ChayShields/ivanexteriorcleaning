@@ -129,7 +129,7 @@ export const services: ServiceDefinition[] = [
     bullets: [
       "Commercial-grade pressure washing for block paving, concrete, tarmac and stone",
       "Weed and moss removal from joints, not just the surface",
-      "Optional sanding and sealing to slow down regrowth",
+      "Optional sanding of the joints to help slow down regrowth",
       "Free, no-obligation quote before any work starts",
     ],
   },

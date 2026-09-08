@@ -95,9 +95,9 @@ const serviceFaqs: Record<string, FAQItem[]> = {
         "Yes, weed and moss removal from the joints is part of the service, not just a surface clean.",
     },
     {
-      question: "Do you offer sealing?",
+      question: "Do you offer sanding after cleaning?",
       answer:
-        "Yes, we offer optional sanding and sealing after cleaning to help slow down moss and weed regrowth.",
+        "Yes, we can add sand into the joints after cleaning to help slow down moss and weed regrowth. We don't offer sealing.",
     },
   ],
 };

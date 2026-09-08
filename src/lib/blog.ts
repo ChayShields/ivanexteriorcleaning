@@ -93,7 +93,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "What we do about it",
         paragraphs: [
-          "We pressure wash driveways and patios across Lowestoft, Kessingland and Pakefield, including weed and moss removal from the joints, with optional sanding and sealing to slow down regrowth. Get in touch for a free, no-obligation quote.",
+          "We pressure wash driveways and patios across Lowestoft, Kessingland and Pakefield, including weed and moss removal from the joints, with optional sanding to help slow down regrowth. Get in touch for a free, no-obligation quote.",
         ],
       },
     ],
