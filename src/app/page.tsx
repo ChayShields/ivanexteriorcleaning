@@ -21,10 +21,10 @@ export default function Home() {
               Exterior Cleaning That Keeps Your Property Looking Its Best
             </h1>
             <p className="mt-4 max-w-xl text-lg text-navy-800/80">
-              Window cleaning, gutter clearing &amp; fascia cleaning, and
-              driveway &amp; patio pressure washing for homes and businesses across
-              Lowestoft, Kessingland, Pakefield and Carlton Colville. Fully
-              insured, locally based, free quotes.
+              Window cleaning, gutter clearing, gutter and fascia cleaning,
+              and driveway &amp; patio pressure washing for homes and
+              businesses across Lowestoft, Kessingland, Pakefield and
+              Carlton Colville. Fully insured, locally based, free quotes.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a

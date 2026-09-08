@@ -25,13 +25,15 @@ export const metadata: Metadata = {
     template: `%s | ${business.name}`,
   },
   description:
-    "Local window cleaning, gutter clearing and driveway & patio pressure washing across Lowestoft, Kessingland and Pakefield. Free, no-obligation quotes.",
+    "Window cleaning, gutter clearing, gutter and fascia cleaning, and driveway & patio pressure washing across Lowestoft, Kessingland, Pakefield and Carlton Colville. Free, no-obligation quotes.",
   keywords: [
     "window cleaning Lowestoft",
+    "gutter clearing Lowestoft",
     "gutter cleaning Lowestoft",
     "driveway cleaning Lowestoft",
     "exterior cleaning Kessingland",
     "exterior cleaning Pakefield",
+    "exterior cleaning Carlton Colville",
   ],
   openGraph: {
     type: "website",
@@ -39,14 +41,14 @@ export const metadata: Metadata = {
     siteName: business.name,
     title: `${business.name} | Window, Gutter & Driveway Cleaning in Lowestoft`,
     description:
-      "Local window cleaning, gutter clearing and driveway & patio pressure washing across Lowestoft, Kessingland and Pakefield.",
+      "Window cleaning, gutter clearing, gutter and fascia cleaning, and driveway & patio pressure washing across Lowestoft, Kessingland, Pakefield and Carlton Colville.",
     url: business.siteUrl,
   },
   twitter: {
     card: "summary_large_image",
     title: `${business.name} | Window, Gutter & Driveway Cleaning in Lowestoft`,
     description:
-      "Local window cleaning, gutter clearing and driveway & patio pressure washing across Lowestoft, Kessingland and Pakefield.",
+      "Window cleaning, gutter clearing, gutter and fascia cleaning, and driveway & patio pressure washing across Lowestoft, Kessingland, Pakefield and Carlton Colville.",
   },
   alternates: {
     canonical: "/",
