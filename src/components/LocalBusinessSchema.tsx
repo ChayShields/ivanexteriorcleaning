@@ -1,6 +1,9 @@
 import { areas, business, services } from "@/lib/business";
+import { getGoogleReviews } from "@/lib/google-reviews";
 
-export default function LocalBusinessSchema() {
+export default async function LocalBusinessSchema() {
+  const reviewData = await getGoogleReviews();
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
@@ -33,6 +36,12 @@ export default function LocalBusinessSchema() {
       closes: hours.closes,
     })),
     sameAs: [business.social.facebook],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: reviewData.rating,
+      reviewCount: reviewData.userRatingCount,
+      bestRating: 5,
+    },
     makesOffer: services.map((service) => ({
       "@type": "Offer",
       itemOffered: {

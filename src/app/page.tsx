@@ -18,7 +18,7 @@ export default function Home() {
               Lowestoft &middot; Kessingland &middot; Pakefield &middot; Carlton Colville
             </p>
             <h1 className="mt-4 text-4xl font-bold leading-tight text-navy-900 sm:text-5xl">
-              Exterior Cleaning That Keeps Your Property Looking Its Best
+              Window, Gutter &amp; Driveway Cleaning in Lowestoft
             </h1>
             <p className="mt-4 max-w-xl text-lg text-navy-800/80">
               Window cleaning, gutter clearing, gutter and fascia cleaning,

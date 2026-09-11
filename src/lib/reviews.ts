@@ -6,8 +6,8 @@ import type { GoogleReviewsData } from "@/lib/google-reviews";
 // this list if the live API integration in google-reviews.ts starts working
 // once his profile has more authority/history.
 export const realReviews: GoogleReviewsData = {
-  rating: 5,
-  userRatingCount: 4,
+  rating: 4.9,
+  userRatingCount: 30,
   googleMapsUri: "https://maps.app.goo.gl/wwt19DGPPNGQw4kdA",
   reviews: [
     {
