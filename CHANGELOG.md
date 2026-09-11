@@ -49,3 +49,30 @@ Full local-SEO-focused Next.js rebuild of ivanexteriorcleaning.co.uk. See
 - Hero copy lists all 4 services distinctly
 - Removed all "sealing" claims - sanding only, no sealing offered
 - Real logo added to header and set as favicon
+
+## Local SEO fixes (2026-09-11)
+
+Follow-up pass after connecting Google Search Console and running a full
+local-SEO/GBP audit. See `5bdac15`.
+
+- Homepage H1 changed from generic boilerplate to "Window, Gutter &
+  Driveway Cleaning in Lowestoft" - deliberately not an exact duplicate of
+  the `/window-cleaning` page's own H1, to avoid the two pages competing
+  for the same exact-match phrase.
+- Added `AggregateRating` to the homepage `LocalBusinessSchema` JSON-LD,
+  sourced live from the same `getGoogleReviews()` call the visible
+  reviews widget uses, so schema and on-page display can't drift apart.
+- Updated the `realReviews` fallback numbers from the pre-launch
+  placeholder (5.0 stars / 4 reviews) to the real current figures
+  confirmed against the live Google Business Profile (4.9 stars / 30
+  reviews).
+- **Confirmed, not just suspected:** the stored Google Place ID 404s with
+  "no longer valid," and a live Places API text search for the business
+  by name also returns zero results - the review-fetch fallback path is
+  active and doing real work right now, not a rare edge case. Revisit
+  once the listing has more history/authority with Google.
+- Google Business Profile itself: primary category "Window cleaning
+  service" was the only category set despite Ivan also doing gutter and
+  driveway work - added "Gutter cleaning service" and "Pressure washing
+  service" as additional categories directly on the live profile (not a
+  code change).
