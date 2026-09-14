@@ -1,9 +1,12 @@
+import type { AreaSlug, ServiceSlug } from "@/lib/business";
+
 export interface BlogPost {
   slug: string;
   title: string;
   excerpt: string;
   publishedAt: string;
-  relatedService?: string;
+  relatedServices?: ServiceSlug[];
+  relatedAreas?: AreaSlug[];
   body: { heading?: string; paragraphs: string[] }[];
 }
 
@@ -14,7 +17,8 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Coastal weather, overhanging trees and roof pitch all change how often your gutters actually need clearing. Here's how to work out a sensible schedule.",
     publishedAt: "2026-08-18",
-    relatedService: "gutter-clearing",
+    relatedServices: ["gutter-clearing"],
+    relatedAreas: ["lowestoft", "kessingland", "pakefield"],
     body: [
       {
         paragraphs: [
@@ -53,7 +57,8 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Moss, dark staining and slippery patches aren't just cosmetic. Here's what to look for and why leaving it too long makes the job harder.",
     publishedAt: "2026-08-25",
-    relatedService: "driveway-patio-cleaning",
+    relatedServices: ["driveway-patio-cleaning"],
+    relatedAreas: ["lowestoft", "kessingland", "pakefield"],
     body: [
       {
         paragraphs: [
@@ -104,7 +109,8 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Salt spray off the North Sea settles on glass faster than most people expect. Here's why properties near the seafront often need shorter cleaning cycles.",
     publishedAt: "2026-09-01",
-    relatedService: "window-cleaning",
+    relatedServices: ["window-cleaning"],
+    relatedAreas: ["lowestoft", "kessingland", "pakefield", "carlton-colville"],
     body: [
       {
         paragraphs: [
@@ -133,6 +139,86 @@ export const blogPosts: BlogPost[] = [
         heading: "Book a round",
         paragraphs: [
           "We run regular window cleaning rounds across Lowestoft, Kessingland and Pakefield and can recommend a sensible frequency based on exactly where your property sits. Get in touch for a free quote.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "gutter-clearing-vs-gutter-cleaning-whats-the-difference",
+    title: "Gutter Clearing vs Gutter Cleaning: What's the Difference?",
+    excerpt:
+      "The two names sound interchangeable, but they're different jobs solving different problems. Here's what each one actually covers, and why Lowestoft homes often need both.",
+    publishedAt: "2026-09-14",
+    relatedServices: ["gutter-clearing", "gutter-cleaning"],
+    relatedAreas: ["lowestoft", "kessingland", "pakefield", "carlton-colville"],
+    body: [
+      {
+        paragraphs: [
+          "\"Can you clean my gutters?\" is one of the most common enquiries we get from homes across Lowestoft, Kessingland, Pakefield and Carlton Colville, and it's genuinely ambiguous — because gutter clearing and gutter cleaning are two different jobs. Mixing them up usually means booking the wrong one and being disappointed with the result, so it's worth being clear on what each actually does before you call anyone.",
+        ],
+      },
+      {
+        heading: "Gutter clearing: the functional job",
+        paragraphs: [
+          "Gutter clearing is about what's inside the gutter — leaves, moss, moss seed, and general debris that builds up and blocks water from flowing away properly. Left unchecked, a blocked gutter overflows during rain, which can lead to damp patches on walls, rotting fascia boards, and in bad cases, water getting in under the roofline. We use a high-reach vacuum system to clear the gutter run and the downpipes, and send before-and-after photos so you can see exactly what came out.",
+        ],
+      },
+      {
+        heading: "Gutter cleaning: the cosmetic wash",
+        paragraphs: [
+          "Gutter cleaning is about what's on the outside — the black 'tiger-stripe' staining and general road grime that builds up on the uPVC face of the gutter, soffits and fascias over time. It's a soft-wash exterior clean, not a debris removal job, and it doesn't touch what's inside the gutter run at all. It's one of the biggest visible upgrades a tired-looking front elevation can get, often noticeable from the street.",
+        ],
+      },
+      {
+        heading: "Do you need one or both?",
+        paragraphs: [
+          "Plenty of properties only need one or the other. A newer property with well-maintained uPVC but overhanging trees might only need regular clearing. A property with clean-running gutters but years of staining on the fascia might only need the cosmetic wash. But if it's been years since either was done, most homes in Lowestoft, Kessingland, Pakefield and Carlton Colville benefit from both — clear first, then clean, since a clear gutter run makes the exterior wash more effective and the results last longer.",
+        ],
+      },
+      {
+        heading: "Get the right one booked",
+        paragraphs: [
+          "If you're not sure which one your property actually needs, tell us what you're seeing — overflow during rain points to clearing, staining and grime points to cleaning — and we'll recommend the right job rather than upselling one you don't need. See our gutter clearing and gutter cleaning pages for full details, or get in touch for a free quote.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "exterior-cleaning-in-carlton-colville-what-to-expect",
+    title: "Exterior Cleaning in Carlton Colville: What Local Homes Actually Need",
+    excerpt:
+      "Carlton Colville sits back from the coast, so the grime is different to Lowestoft's seafront — road film and organic debris rather than salt spray. Here's what that means for upkeep.",
+    publishedAt: "2026-09-14",
+    relatedServices: ["window-cleaning", "gutter-clearing"],
+    relatedAreas: ["carlton-colville"],
+    body: [
+      {
+        paragraphs: [
+          "Most of our advice for the coast is built around salt spray — but Carlton Colville sits back from the seafront along the A146, and the grime homes there deal with comes from different sources entirely. If you've read our advice for Lowestoft or Pakefield and it hasn't quite matched what you're seeing on your own windows or gutters, this is probably why.",
+        ],
+      },
+      {
+        heading: "Road film, not sea spray",
+        paragraphs: [
+          "Properties along the A146 corridor pick up more road film and diesel residue from through-traffic between Lowestoft and Beccles than anything blown in off the sea. It's a duller, greasier build-up than salt residue, and it tends to show up on windows facing the road well before the rest of the property looks like it needs attention.",
+        ],
+      },
+      {
+        heading: "What actually ends up in the gutters",
+        paragraphs: [
+          "Homes near Bloodmoor Hill and the surrounding fields collect more windblown leaves, pollen and organic debris in their gutters over autumn than a typical seafront property does — it's a different clog, but it blocks a gutter just as effectively as anything picked up on the coast. If your gutters are overflowing and you can't work out why given you're nowhere near the sea, this is usually the answer.",
+        ],
+      },
+      {
+        heading: "The newer estates on the western edge",
+        paragraphs: [
+          "Newer builds towards the western edge of the village aren't exempt just because they're newer — modern render and uPVC still pick up road film, and new driveways still collect moss and algae in damp corners. Being new just means the neglect is less visible for longer, not that it isn't happening.",
+        ],
+      },
+      {
+        heading: "Book a round in Carlton Colville",
+        paragraphs: [
+          "We run regular window cleaning in Carlton Colville and gutter clearing in Carlton Colville for homes right up to the East Anglia Transport Museum on Chapel Road, and for the newer estates further west, on the same round as the rest of the coast. Get in touch for a free quote.",
         ],
       },
     ],

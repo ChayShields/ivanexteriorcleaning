@@ -76,3 +76,76 @@ local-SEO/GBP audit. See `5bdac15`.
   driveway work - added "Gutter cleaning service" and "Pressure washing
   service" as additional categories directly on the live profile (not a
   code change).
+
+## Indexing audit and sitemap resubmission (2026-09-14)
+
+Pulled live Search Console data (indexing status, search performance,
+sitemap health) for the first time via a direct API connection, rather
+than manual dashboard checks.
+
+- **Root cause found for why only the homepage was ranking:** Search
+  Console's stored copy of the sitemap was last fetched in May 2026 -
+  months before this site's rebuild existed - and only knew about 1 URL,
+  0 indexed. The live sitemap itself was correct and current (all 4
+  service pages, 4 area pages, blog posts, dated 2026-09-11), Google just
+  hadn't been told to re-fetch it since the rebuild shipped. Confirmed via
+  URL Inspection that `/window-cleaning` was "unknown to Google" as a
+  result - not a ranking problem, an indexing problem.
+- Chay resubmitted the sitemap in Search Console. Confirmed via the API
+  immediately after: submitted count jumped from 1 to 18, last
+  fetched/downloaded timestamps updated to today. Indexed count is still
+  0 as of resubmission - expected, Google needs to actually crawl each
+  page before it counts as indexed, that doesn't happen the same minute.
+- Real ranking baseline captured while investigating: homepage passing
+  indexing checks with review-snippet rich results live. Best current
+  keyword position is "window cleaning lowestoft" at ~8-10 (page 1 miss,
+  currently won by the homepage rather than the dedicated
+  `/window-cleaning` page, which explains the cannibalization once that
+  page is indexed). "gutter cleaning lowestoft" sitting mid-teens.
+  "roof cleaning lowestoft" surfaced at position 1 off a single
+  impression - Ivan doesn't have a roof cleaning service/page, worth
+  deciding whether to chase that with content given Google's already
+  associating the site with it.
+- Next: blog content and on-page keyword targeting work planned around
+  these real query terms, plus requesting manual indexing on the key
+  service/area pages to speed past the normal crawl queue.
+- Manually requested indexing via URL Inspection on all 4 service pages
+  and 3 of the 4 area pages (Carlton Colville pending - hit Search
+  Console's daily quota). Confirmed via the API within the hour: all 4
+  service pages flipped from unindexed to `PASS` / "Submitted and
+  indexed".
+
+## Blog expansion and internal linking pass (2026-09-14)
+
+- **Internal linking gap found and fixed:** all 3 existing blog posts only
+  ever linked to one service page each, and never linked to any area
+  page - despite repeatedly naming Lowestoft, Kessingland and Pakefield
+  in the body text. Carlton Colville had zero blog-driven internal links
+  pointing at it at all. `BlogPost.relatedService` (single string) was
+  replaced with `relatedServices` and a new `relatedAreas` array field,
+  both rendered as real links at the bottom of every post
+  (`src/lib/blog.ts`, `src/app/blog/[slug]/page.tsx`). Backfilled onto
+  the 3 existing posts based on which areas/services they already
+  genuinely reference in the text - no forced or contextually irrelevant
+  links added.
+- **2 new blog posts added**, targeting real keyword gaps found in the
+  Search Console data pulled today:
+  - "Gutter Clearing vs Gutter Cleaning: What's the Difference?" -
+    reinforces the deliberate two-page service split with actual
+    supporting content, something that existed as a site architecture
+    decision but had zero content backing it up until now. Links to both
+    service pages and all 4 area pages.
+  - "Exterior Cleaning in Carlton Colville: What Local Homes Actually
+    Need" - Carlton Colville had the weakest content/link presence of
+    the 4 areas. Built from the same real local detail already
+    researched for the area page (A146 road film, Bloodmoor Hill/field
+    debris, the newer western estates) rather than generic swapped-town
+    content, consistent with the site's existing anti-doorway-page
+    approach. Deliberately does NOT cover roof cleaning despite that
+    query surfacing at position 1 in Search Console - Ivan doesn't
+    currently list that as a service, worth confirming with him before
+    building content around a keyword the site can't actually deliver
+    on.
+- Verified locally: full production build passes clean, and both new
+  posts checked in the dev server to confirm the new internal links
+  render correctly before anything gets pushed.
