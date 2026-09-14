@@ -20,7 +20,7 @@ export async function generateMetadata(
   const service = getServiceBySlug(slug);
   if (!service) return {};
 
-  const title = `${service.name} in Lowestoft, Kessingland & Pakefield`;
+  const title = `${service.name} in Lowestoft, Kessingland, Pakefield & Carlton Colville`;
   const description = `${service.heroSummary} Free, no-obligation quotes. Call ${business.phone}.`;
 
   return {
@@ -125,7 +125,7 @@ export default async function ServicePage(props: PageProps<"/[service]">) {
       <section className="bg-gradient-to-b from-sand-50 to-white">
         <div className="mx-auto max-w-4xl px-4 py-16 text-center sm:px-6 sm:py-24">
           <h1 className="text-4xl font-bold text-navy-900 sm:text-5xl">
-            {service.name} in Lowestoft, Kessingland &amp; Pakefield
+            {service.name} in Lowestoft, Kessingland, Pakefield &amp; Carlton Colville
           </h1>
           <p className="mt-4 text-lg text-navy-800/80">{service.heroSummary}</p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">

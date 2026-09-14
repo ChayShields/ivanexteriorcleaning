@@ -149,3 +149,24 @@ than manual dashboard checks.
 - Verified locally: full production build passes clean, and both new
   posts checked in the dev server to confirm the new internal links
   render correctly before anything gets pushed.
+
+## Service page title/meta fix: missing Carlton Colville (2026-09-14)
+
+- **Found a site-wide, pre-existing gap while reviewing on-page SEO for
+  the service pages:** every service page's `<title>`, meta description
+  and H1 only ever listed 3 areas ("Lowestoft, Kessingland & Pakefield"),
+  completely omitting Carlton Colville, even though it's a full 4th area
+  with its own page and its own primary keyword ("window cleaning
+  Carlton Colville" etc.). The page body further down already correctly
+  said "4 areas" - title, meta and H1 were the only things out of sync.
+  Fixed in `src/app/[service]/page.tsx` (title + H1, both hardcoded in
+  one place each) and the 4 `heroSummary` strings in `src/lib/business.ts`
+  (used in both the meta description and the on-page hero text).
+- **Same gap also existed in `Footer.tsx` (every page, site-wide), the
+  contact page's meta description, and the blog index page's meta
+  description** - all fixed in the same pass once flagged. Older
+  individual blog post body text was left alone (already handled/
+  reviewed in the internal linking pass above).
+- Verified with a full production build and confirmed the live
+  `<title>` tag on `/window-cleaning` now reads correctly with all 4
+  areas.

@@ -23,7 +23,8 @@ export default function Footer() {
           <p className="text-lg font-bold text-white">{business.name}</p>
           <p className="mt-3 text-sm text-sand-100/70">
             Window cleaning, gutter clearing and driveway &amp; patio pressure
-            washing across Lowestoft, Kessingland and Pakefield.
+            washing across Lowestoft, Kessingland, Pakefield and Carlton
+            Colville.
           </p>
           <div className="mt-4 flex flex-col gap-2 text-sm">
             <a href={business.phoneHref} className="flex items-center gap-2 hover:text-amber-400">

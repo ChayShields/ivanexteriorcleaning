@@ -59,7 +59,7 @@ export const services: ServiceDefinition[] = [
       "conservatory roof cleaning Lowestoft",
     ],
     heroSummary:
-      "Streak-free window cleaning across Lowestoft, Kessingland and Pakefield, using a pure water fed pole system that's safe, ladder-free and leaves glass spot-free for longer.",
+      "Streak-free window cleaning across Lowestoft, Kessingland, Pakefield and Carlton Colville, using a pure water fed pole system that's safe, ladder-free and leaves glass spot-free for longer.",
     bullets: [
       "Pure water fed pole system reaches upper floors safely without ladders",
       "Frames, sills and doors cleaned as standard, not just the glass",
@@ -81,7 +81,7 @@ export const services: ServiceDefinition[] = [
       "gutter clearing Kessingland",
     ],
     heroSummary:
-      "Gutter clearing across Lowestoft, Kessingland and Pakefield — leaves, moss and debris removed from inside the gutter and downpipes so water actually flows away, before a blockage causes overflow or damp.",
+      "Gutter clearing across Lowestoft, Kessingland, Pakefield and Carlton Colville — leaves, moss and debris removed from inside the gutter and downpipes so water actually flows away, before a blockage causes overflow or damp.",
     bullets: [
       "High-reach vacuum system clears gutters without ladders against the wall",
       "Before-and-after photos sent so you can see exactly what came out",
@@ -103,7 +103,7 @@ export const services: ServiceDefinition[] = [
       "gutter cleaning Kessingland",
     ],
     heroSummary:
-      "Exterior gutter, soffit and fascia cleaning across Lowestoft, Kessingland and Pakefield — lifting the black staining and grime that build up on uPVC over time, for one of the biggest cosmetic upgrades a tired front elevation can get.",
+      "Exterior gutter, soffit and fascia cleaning across Lowestoft, Kessingland, Pakefield and Carlton Colville — lifting the black staining and grime that build up on uPVC over time, for one of the biggest cosmetic upgrades a tired front elevation can get.",
     bullets: [
       "Removes black 'tiger-stripe' staining caused by weather and road grime",
       "Covers gutters, soffits and fascias, not just the visible gutter face",
@@ -125,7 +125,7 @@ export const services: ServiceDefinition[] = [
       "block paving cleaning Suffolk",
     ],
     heroSummary:
-      "Driveway and patio pressure washing across Lowestoft, Kessingland and Pakefield, lifting moss, algae and ground-in dirt from block paving, concrete and natural stone.",
+      "Driveway and patio pressure washing across Lowestoft, Kessingland, Pakefield and Carlton Colville, lifting moss, algae and ground-in dirt from block paving, concrete and natural stone.",
     bullets: [
       "Commercial-grade pressure washing for block paving, concrete, tarmac and stone",
       "Weed and moss removal from joints, not just the surface",

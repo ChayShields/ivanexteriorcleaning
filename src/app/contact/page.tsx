@@ -7,7 +7,7 @@ import GoogleMapEmbed from "@/components/GoogleMapEmbed";
 export const metadata: Metadata = {
   title: "Contact Us & Free Quotes",
   description:
-    "Get in touch with Ivan's Exterior Cleaning for a free, no-obligation quote on window cleaning, gutter clearing or driveway & patio cleaning in Lowestoft, Kessingland and Pakefield.",
+    "Get in touch with Ivan's Exterior Cleaning for a free, no-obligation quote on window cleaning, gutter clearing or driveway & patio cleaning in Lowestoft, Kessingland, Pakefield and Carlton Colville.",
   alternates: { canonical: "/contact" },
 };
 

@@ -5,7 +5,7 @@ import { blogPosts } from "@/lib/blog";
 export const metadata: Metadata = {
   title: "Tips & Advice",
   description:
-    "Practical exterior cleaning advice for homeowners in Lowestoft, Kessingland and Pakefield — gutters, driveways, patios and windows.",
+    "Practical exterior cleaning advice for homeowners in Lowestoft, Kessingland, Pakefield and Carlton Colville — gutters, driveways, patios and windows.",
   alternates: { canonical: "/blog" },
 };
 
