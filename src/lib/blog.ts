@@ -223,6 +223,52 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "how-much-does-window-cleaning-cost-in-lowestoft",
+    title: "How Much Does Window Cleaning Cost in Lowestoft?",
+    excerpt:
+      "It's the question we get asked most, and the honest answer is: it depends on your property. Here's exactly what goes into a quote, and why we don't work from a fixed price list.",
+    publishedAt: "2026-09-15",
+    relatedServices: ["window-cleaning"],
+    relatedAreas: ["lowestoft", "kessingland", "pakefield", "carlton-colville"],
+    body: [
+      {
+        paragraphs: [
+          "\"How much do you charge?\" is the first thing most people ask when they get in touch, and it's a fair question — but it's also one we can't answer with a single number, because window cleaning prices genuinely do vary from property to property across Lowestoft, Kessingland, Pakefield and Carlton Colville. Here's what actually goes into working out a fair price for your home.",
+        ],
+      },
+      {
+        heading: "Why we don't publish a fixed price list",
+        paragraphs: [
+          "A lot of window cleaners quote a flat rate per visit, but that usually means either overcharging smaller properties to cover the bigger ones, or underquoting larger jobs and cutting corners to make it work. We'd rather look at your actual property and give you a price that reflects the job in front of us, not an average.",
+        ],
+      },
+      {
+        heading: "What actually affects your quote",
+        paragraphs: [
+          "The main factors are the size of the property and roughly how many windows there are, how many storeys it has and how easy the access is (a straightforward semi is a different job to a three-storey property with awkward rear access), and whether there's anything extra like a conservatory roof or a shopfront. None of this needs a site visit to work out — a phone call or a couple of photos is usually enough for us to give you an accurate figure.",
+        ],
+      },
+      {
+        heading: "One-off clean or a regular round?",
+        paragraphs: [
+          "This is one of the biggest factors in what you'll pay over the course of a year. A one-off clean on a property that hasn't been done in a while usually takes longer and costs more than a single visit on a regular round, because there's more built-up grime to shift. Once you're on a regular 4, 8 or 12-weekly schedule, each visit is quicker and the per-visit price reflects that — which is why most of our customers end up on a round rather than booking one-offs each time.",
+        ],
+      },
+      {
+        heading: "Does location change the price?",
+        paragraphs: [
+          "Not directly — we cover Lowestoft, Kessingland, Pakefield and Carlton Colville on the same regular round, so there's no call-out premium for any of the four. Where location does matter is frequency: properties closer to the seafront pick up salt residue faster and often benefit from a shorter cleaning cycle, which affects how often you're booking us rather than what each visit costs.",
+        ],
+      },
+      {
+        heading: "Getting an accurate price",
+        paragraphs: [
+          "The only way to get a number that actually means something is a quick chat about your property. Get in touch for a free, no-obligation quote — we'll give you an honest figure upfront, with no hidden extras added once we turn up. See our window cleaning page for what's included in every visit.",
+        ],
+      },
+    ],
+  },
 ];
 
 export function getPostBySlug(slug: string) {

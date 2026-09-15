@@ -48,6 +48,11 @@ const serviceFaqs: Record<string, FAQItem[]> = {
       answer:
         "Yes, frames, sills and doors are cleaned as standard on every visit, not just the glass.",
     },
+    {
+      question: "How much does window cleaning cost in Lowestoft?",
+      answer:
+        "We don't work from a fixed price list — every quote is based on your actual property: size, number of storeys, access, and how often you'd like us to visit. That way you get a fair price for your home rather than a generic rate that doesn't fit. Regular rounds typically work out better value than one-off cleans. Get in touch for a free, no-obligation quote and we'll give you an honest figure before any work starts.",
+    },
   ],
   "gutter-clearing": [
     {

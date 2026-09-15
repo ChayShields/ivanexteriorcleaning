@@ -170,3 +170,36 @@ than manual dashboard checks.
 - Verified with a full production build and confirmed the live
   `<title>` tag on `/window-cleaning` now reads correctly with all 4
   areas.
+
+## Window cleaning pricing content push (2026-09-15)
+
+Standing goal set with Chay: push "window cleaning lowestoft", "gutter
+cleaning lowestoft" and "exterior cleaning lowestoft" toward position
+1-3, starting with the closest opportunity first ("window cleaning
+lowestoft" was at position 8.3 in the 28-day GSC data pulled today,
+highest-impression keyword on the site). Competitor research on
+the-window-cleaning-company.co.uk (ranks well, established 2010) found
+their whole site is 7 thin pages with no reviews, no area pages and no
+blog - their edge is 14 years of domain age/backlinks, not content
+depth, so the real long-term lever is citations/authority work, not
+just more pages. This session covers the content side of that push.
+
+- **Added a pricing FAQ to the window-cleaning service page**
+  (`src/app/[service]/page.tsx`) answering "How much does window
+  cleaning cost in Lowestoft?" without quoting any figures - Ivan
+  quotes per property, not off a price list, so the answer explains
+  what drives a quote (size, storeys, access, one-off vs regular
+  round) and pushes to a free quote instead. Picked up automatically
+  by the existing FAQPage schema on that page.
+- **New blog post: "How Much Does Window Cleaning Cost in
+  Lowestoft?"** (`src/lib/blog.ts`) - targets the same real commercial
+  search intent at more length: why there's no fixed price list, what
+  actually affects a quote, one-off vs regular round pricing, and why
+  location changes visit frequency rather than the price itself. No £
+  figures anywhere, consistent with Ivan's per-property quoting.
+  Links back to the window-cleaning service page and all 4 area
+  pages.
+- Verified with a full production build (clean) and against the dev
+  server: FAQ text and FAQPage schema render correctly on
+  `/window-cleaning`, the new post renders all 5 sections with working
+  internal links and returns a clean 200, and it's listed on `/blog`.
