@@ -121,8 +121,19 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-white/10 px-4 py-4 text-center text-xs text-sand-100/50 sm:px-6">
-        © {new Date().getFullYear()} {business.legalName}. All rights reserved.
+      <div className="flex flex-col items-center gap-1 border-t border-white/10 px-4 py-4 text-center text-xs text-sand-100/50 sm:px-6">
+        <span>© {new Date().getFullYear()} {business.legalName}. All rights reserved.</span>
+        <span>
+          Designed and developed by{" "}
+          <a
+            href="https://hireme.link"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-amber-400"
+          >
+            Chay Shields
+          </a>
+        </span>
       </div>
     </footer>
   );
