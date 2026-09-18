@@ -1,7 +1,9 @@
+import { headers } from "next/headers";
 import { areas, business, services } from "@/lib/business";
 import { getGoogleReviews } from "@/lib/google-reviews";
 
 export default async function LocalBusinessSchema() {
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
   const reviewData = await getGoogleReviews();
 
   const schema = {
@@ -55,6 +57,7 @@ export default async function LocalBusinessSchema() {
   return (
     <script
       type="application/ld+json"
+      nonce={nonce}
       dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
     />
   );
