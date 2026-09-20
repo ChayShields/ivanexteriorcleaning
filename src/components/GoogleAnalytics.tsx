@@ -1,14 +1,15 @@
 "use client";
 
 import Script from "next/script";
+import { GA_MEASUREMENT_ID } from "@/lib/analytics";
 import { useCookieConsent } from "./CookieConsent";
 
-const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
-
+// Renders nothing (so no request to Google at all) until the visitor has
+// explicitly accepted. Rejecting, or never choosing, keeps GA off entirely.
 export default function GoogleAnalytics() {
   const consent = useCookieConsent();
 
-  if (!GA_MEASUREMENT_ID || consent !== "accepted") return null;
+  if (consent !== "accepted") return null;
 
   return (
     <>
@@ -16,10 +17,7 @@ export default function GoogleAnalytics() {
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
         strategy="afterInteractive"
       />
-      <Script
-        src={`/api/ga-config?id=${encodeURIComponent(GA_MEASUREMENT_ID)}`}
-        strategy="afterInteractive"
-      />
+      <Script src="/api/ga-config" strategy="afterInteractive" />
     </>
   );
 }

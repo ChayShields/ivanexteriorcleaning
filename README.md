@@ -16,8 +16,6 @@ Open [http://localhost:3000](http://localhost:3000).
 
 Copy `.env.example` to `.env.local` and fill in:
 
-- `NEXT_PUBLIC_GA_MEASUREMENT_ID` — GA4 measurement ID. Analytics only loads
-  after a visitor accepts the cookie consent banner.
 - `BREVO_API_KEY` — required for the contact form (`/api/contact`) to
   actually send emails via Brevo. Without it, enquiries are logged
   server-side but not emailed — the form still returns success so it should

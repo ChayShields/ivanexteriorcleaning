@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CookieSettingsButton } from "@/components/CookieConsent";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { areas, business, secondaryAreas, services } from "@/lib/business";
 
@@ -112,6 +113,9 @@ export default function Footer() {
               <Link href="/privacy-policy" className="hover:text-amber-400">
                 Privacy Policy
               </Link>
+            </li>
+            <li>
+              <CookieSettingsButton className="inline-flex min-h-[44px] items-center hover:text-amber-400" />
             </li>
             <li>
               <Link href="/terms-of-service" className="hover:text-amber-400">

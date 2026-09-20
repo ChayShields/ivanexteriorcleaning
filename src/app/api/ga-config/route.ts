@@ -1,17 +1,18 @@
-import { NextRequest } from "next/server";
+import { GA_MEASUREMENT_ID } from "@/lib/analytics";
 
-const GA_ID_PATTERN = /^G-[A-Z0-9]{6,12}$/;
+// Served as an external script so the site's nonce-based CSP never needs an
+// inline <script> for GA's config. The ID comes from the constant in
+// lib/analytics.ts and nothing from the request is ever interpolated into
+// the response, so there is no query-string input to inject through.
+const body =
+  "window.dataLayer=window.dataLayer||[];" +
+  "function gtag(){dataLayer.push(arguments);}" +
+  "gtag('js',new Date());" +
+  `gtag('config','${GA_MEASUREMENT_ID}');`;
 
-export async function GET(request: NextRequest) {
-  const id = request.nextUrl.searchParams.get("id");
-  const isValid = typeof id === "string" && GA_ID_PATTERN.test(id);
-
-  const body = isValid
-    ? `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${id}',{anonymize_ip:true});`
-    : "";
-
+export function GET() {
   return new Response(body, {
-    status: isValid ? 200 : 400,
+    status: 200,
     headers: {
       "Content-Type": "application/javascript; charset=utf-8",
       "Cache-Control": "public, max-age=3600",

@@ -11,7 +11,7 @@ export default function PrivacyPolicyPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
       <h1 className="text-4xl font-bold text-navy-900">Privacy Policy</h1>
-      <p className="mt-2 text-sm text-navy-800/70">Last updated: 8 September 2026</p>
+      <p className="mt-2 text-sm text-navy-800/70">Last updated: 20 September 2026</p>
 
       <div className="prose prose-navy mt-8 flex flex-col gap-6 text-navy-800">
         <section>
@@ -38,9 +38,12 @@ export default function PrivacyPolicyPage() {
               your message).
             </li>
             <li>
-              Anonymised usage data via Google Analytics (pages visited,
-              approximate location, device type), but only if you accept
-              analytics cookies via the cookie banner.
+              Usage data via Google Analytics (pages visited,
+              approximate location, device type, linked to a random ID rather
+              than your name or contact details), but only if you accept
+              analytics cookies via the cookie banner. Accepting sets two
+              cookies, called _ga and _ga_ followed by an ID, which last up to
+              2 years.
             </li>
           </ul>
         </section>
@@ -67,8 +70,10 @@ export default function PrivacyPolicyPage() {
             We process enquiry data on the basis of legitimate interest
             (responding to a request you&apos;ve made) and, where a job is
             booked, to take steps towards a contract. Analytics cookies are
-            only used with your consent, which you can withdraw at any time by
-            clearing your browser&apos;s local storage for this site.
+            only used with your consent, which you can withdraw or change at any
+            time using the Cookie settings link in the footer of any page,
+            which reopens the cookie banner and removes any analytics cookies
+            already set.
           </p>
         </section>
 
@@ -79,7 +84,7 @@ export default function PrivacyPolicyPage() {
             processes data under its own privacy policy:
           </p>
           <ul className="mt-2 list-disc pl-6">
-            <li>Google Analytics (GA4) — anonymised usage analytics, only with consent.</li>
+            <li>Google Analytics (GA4) — usage analytics, only with consent.</li>
             <li>Brevo — used to deliver enquiry form emails to us.</li>
             <li>Google Places API — used to display genuine customer reviews.</li>
           </ul>

@@ -1,5 +1,10 @@
 # Change Log
 
+> **Client reporting marker:** everything through commit `5de23b0` (2026-09-15,
+> "Window cleaning pricing content push") was sent to Ivan in the first
+> monthly PDF update. The next PDF should only cover entries added after
+> this marker - move this note down each time a new report goes out.
+
 ## Initial build (September 2026)
 
 Full local-SEO-focused Next.js rebuild of ivanexteriorcleaning.co.uk. See
@@ -203,3 +208,21 @@ just more pages. This session covers the content side of that push.
   server: FAQ text and FAQPage schema render correctly on
   `/window-cleaning`, the new post renders all 5 sections with working
   internal links and returns a clean 200, and it's listed on `/blog`.
+
+## Visitor analytics switched on and cookie banner upgraded (2026-09-20)
+
+- **Google Analytics is now recording visits** on the live site. It had been
+  prepared earlier but was never actually connected, so no visit data was
+  being collected. It now runs (measurement ID set in the code) and only
+  records visitors who click Accept on the cookie banner, in line with UK
+  data-protection rules.
+- **Cookie banner made more robust and easier to use.** Choosing Reject now
+  genuinely removes any analytics cookies already set and stops tracking
+  straight away, including in other open tabs. The banner no longer breaks
+  the page for visitors whose browser blocks site storage. Buttons are larger
+  and easier to tap on a phone.
+- **New "Cookie settings" link in the footer** so a visitor can change their
+  mind at any time (previously the policy told them to clear their browser
+  storage, which is not a realistic way to withdraw consent).
+- **Privacy Policy updated** to match: names the two analytics cookies and
+  how long they last, and describes the new way to withdraw consent.
