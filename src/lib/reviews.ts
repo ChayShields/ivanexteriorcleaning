@@ -7,8 +7,8 @@ import type { GoogleReviewsData } from "@/lib/google-reviews";
 // once his profile has more authority/history.
 export const realReviews: GoogleReviewsData = {
   rating: 4.9,
-  userRatingCount: 30,
-  googleMapsUri: "https://maps.app.goo.gl/wwt19DGPPNGQw4kdA",
+  userRatingCount: 32, // checked against the live listing 2026-09-26
+  googleMapsUri: "https://www.google.com/maps?cid=9329189114860832662",
   reviews: [
     {
       authorName: "Roger Smith",

@@ -28,14 +28,13 @@ interface PlacesApiResponse {
   }>;
 }
 
-// Ivan's Google Business Profile isn't reachable via the Places API: the
-// stored place ID 404s with "no longer valid" and a live text search for
-// the business by name also returns zero results (re-confirmed 2026-09-11),
-// even though the listing is visible and active on Maps/Search directly.
-// Falls back to realReviews (genuine numbers, manually confirmed against
-// the live listing) whenever the API has nothing usable, rather than
-// showing nothing or fabricated content. Re-check periodically in case the
-// listing becomes searchable via the API as it gains more history.
+// Live reviews from Ivan's Google Business Profile via the Places API
+// (New). The Place ID in business.ts was refreshed on 2026-09-26 - the old
+// one stopped resolving on 2026-09-18. The listing is a service-area
+// business with a hidden address, so text searches only find it with
+// "includePureServiceAreaBusinesses": true. Falls back to realReviews
+// (genuine reviews copied from the live listing) if the API has nothing
+// usable, rather than showing nothing or fabricated content.
 export async function getGoogleReviews(): Promise<GoogleReviewsData> {
   const apiKey = process.env.GOOGLE_PLACES_API_KEY;
   if (!apiKey) return realReviews;

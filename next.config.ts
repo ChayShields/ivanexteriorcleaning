@@ -13,6 +13,15 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: path.join(__dirname),
   },
+  async redirects() {
+    return [
+      {
+        source: "/gutter-clearing",
+        destination: "/gutter-cleaning",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

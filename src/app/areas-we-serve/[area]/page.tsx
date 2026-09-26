@@ -5,9 +5,13 @@ import { areas, business, getAreaBySlug, services } from "@/lib/business";
 import CTABanner from "@/components/CTABanner";
 import GoogleReviews from "@/components/GoogleReviews";
 import GoogleMapEmbed from "@/components/GoogleMapEmbed";
-import ServiceCard from "@/components/ServiceCard";
+import RelatedGuides from "@/components/RelatedGuides";
+import { getPostsForArea } from "@/lib/blog";
+import { ArrowRight } from "lucide-react";
 import EnquiryForm from "@/components/EnquiryForm";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import ServiceCard from "@/components/ServiceCard";
+import { pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return areas.map((area) => ({ area: area.slug }));
@@ -20,15 +24,11 @@ export async function generateMetadata(
   const area = getAreaBySlug(slug);
   if (!area) return {};
 
-  const title = `Exterior Cleaning in ${area.name} | Window, Gutter & Driveway Cleaning`;
-  const description = `${area.intro} Free, no-obligation quotes. Call ${business.phone}.`;
-
-  return {
-    title,
-    description,
-    alternates: { canonical: `/areas-we-serve/${area.slug}` },
-    openGraph: { title, description, url: `/areas-we-serve/${area.slug}` },
-  };
+  return pageMetadata({
+    title: area.seoTitle,
+    description: area.metaDescription,
+    path: `/areas-we-serve/${area.slug}`,
+  });
 }
 
 export default async function AreaPage(props: PageProps<"/areas-we-serve/[area]">) {
@@ -40,6 +40,7 @@ export default async function AreaPage(props: PageProps<"/areas-we-serve/[area]"
   }
 
   const otherAreas = areas.filter((item) => item.slug !== area.slug);
+  const guides = getPostsForArea(area.slug);
 
   return (
     <>
@@ -56,7 +57,7 @@ export default async function AreaPage(props: PageProps<"/areas-we-serve/[area]"
             {area.role}
           </p>
           <h1 className="mt-4 text-4xl font-bold text-navy-900 sm:text-5xl">
-            Exterior Cleaning in {area.name}
+            {area.h1}
           </h1>
           <p className="mt-4 text-lg text-navy-800/80">{area.intro}</p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
@@ -89,13 +90,38 @@ export default async function AreaPage(props: PageProps<"/areas-we-serve/[area]"
       <section className="bg-sand-50 py-14">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
           <h2 className="text-2xl font-bold text-navy-900">
-            Services Available in {area.name}
+            Services in {area.name}
           </h2>
-          <div className="mt-6 grid gap-6 sm:grid-cols-2">
+          <p className="mt-2 text-navy-800/80">
+            Everything we offer is available in {area.name}. Each service page
+            explains exactly what&apos;s included.
+          </p>
+          {area.slug === "lowestoft" ? (
+            <div className="mt-6 grid gap-6 sm:grid-cols-2">
+              {services.map((service) => (
+                <ServiceCard key={service.slug} service={service} />
+              ))}
+            </div>
+          ) : (
+          /* Short links, not full service descriptions: the service pages
+             own each service, and this page stays about the town. */
+          <ul className="mt-6 grid gap-3 sm:grid-cols-2">
             {services.map((service) => (
-              <ServiceCard key={service.slug} service={service} />
+              <li key={service.slug}>
+                <Link
+                  href={`/${service.slug}`}
+                  className="group flex items-center justify-between rounded-xl border border-navy-900/10 bg-white px-4 py-3 font-medium text-navy-900 transition-colors hover:border-teal-500"
+                >
+                  <span>
+                    {service.name}
+                    {service.priceFrom ? ` - from ${service.priceFrom}` : ""}
+                  </span>
+                  <ArrowRight className="h-4 w-4 text-teal-600 transition-transform group-hover:translate-x-1" aria-hidden />
+                </Link>
+              </li>
             ))}
-          </div>
+          </ul>
+          )}
         </div>
       </section>
 
@@ -105,6 +131,8 @@ export default async function AreaPage(props: PageProps<"/areas-we-serve/[area]"
           <GoogleMapEmbed query={area.mapQuery} label={area.name} />
         </div>
       </section>
+
+      <RelatedGuides posts={guides} heading={`Advice for ${area.name} Homes`} />
 
       <section className="mx-auto max-w-4xl px-4 py-14 text-center sm:px-6">
         <h2 className="text-2xl font-bold text-navy-900">What Local Customers Say</h2>
@@ -127,6 +155,9 @@ export default async function AreaPage(props: PageProps<"/areas-we-serve/[area]"
               </Link>
             ))}
           </div>
+          <Link href="/areas-we-serve" className="mt-6 inline-block text-sm font-semibold text-teal-600 hover:underline">
+            See all the areas we serve
+          </Link>
         </div>
       </section>
 

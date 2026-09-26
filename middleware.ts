@@ -5,7 +5,7 @@ function buildCsp(nonce: string) {
     "default-src 'self'",
     `script-src 'self' 'nonce-${nonce}' https://www.googletagmanager.com`,
     "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com",
-    "img-src 'self' data: https://i.ytimg.com https://*.google-analytics.com https://*.googletagmanager.com",
+    "img-src 'self' data: https://i.ytimg.com https://lh3.googleusercontent.com https://*.google-analytics.com https://*.googletagmanager.com",
     "style-src 'self' 'unsafe-inline'",
     "font-src 'self'",
     "frame-src https://www.youtube-nocookie.com https://www.google.com",

@@ -9,9 +9,14 @@ export default async function LocalBusinessSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
+    // Stable ID so each page's Service schema can point at this business.
+    "@id": `${business.siteUrl}/#business`,
     name: business.legalName,
-    image: `${business.siteUrl}/og-image.jpg`,
-    telephone: business.phone,
+    // /og-image.jpg never existed (404); the logo is a real image until a
+    // job photo is added.
+    image: `${business.siteUrl}${business.logoPath}`,
+    logo: `${business.siteUrl}${business.logoPath}`,
+    telephone: business.phoneE164,
     email: business.email,
     url: business.siteUrl,
     priceRange: business.priceRange,
@@ -37,7 +42,9 @@ export default async function LocalBusinessSchema() {
       opens: hours.opens,
       closes: hours.closes,
     })),
-    sameAs: [business.social.facebook],
+    // The Google Business Profile and Facebook page are the same business.
+    sameAs: [business.googleProfileUrl, business.social.facebook],
+    hasMap: business.googleProfileUrl,
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: reviewData.rating,

@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { business } from "@/lib/business";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Terms of Service",
   description: `Terms of Service for ${business.name} and its website.`,
-  alternates: { canonical: "/terms-of-service" },
-};
+  path: "/terms-of-service",
+});
 
 export default function TermsOfServicePage() {
   return (

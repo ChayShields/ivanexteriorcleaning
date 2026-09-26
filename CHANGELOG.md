@@ -5,6 +5,34 @@
 > monthly PDF update. The next PDF should only cover entries added after
 > this marker - move this note down each time a new report goes out.
 
+## Local SEO push, month 1 (26 September 2026)
+
+Based on a full SEO audit (Search Console, Google data, a crawl of every page
+and a review of the local competition).
+
+- **Gutter pages renamed to match what people actually search.** In this
+  area "gutter cleaning" means clearing blocked gutters, so the gutter
+  cleaning page is now the blocked-gutter service (from £60), the old gutter
+  clearing address sends visitors there automatically, and the exterior wash
+  of soffits, fascias and gutter faces has its own new page.
+- **Each service page now focuses on Lowestoft** in its title and heading,
+  with the nearby villages linked below, so the pages stop competing with
+  each other and with the homepage for the same searches.
+- **Trust shown up front on every service page:** fully insured, the live
+  Google rating (4.9 from 32 reviews), and "from £60" on gutter cleaning.
+  Ivan's before-and-after videos now appear on the matching service pages.
+- **Live Google reviews are back** - the connection to his Google profile
+  had stopped working on 18 September and has been reconnected.
+- **One business name everywhere** ("Ivan's Exterior Cleaning Services"),
+  matching the Google Business Profile exactly.
+- **Pressure washing / jet washing** now named on the driveway page, so it
+  can appear for those searches.
+- **Blog posts linked properly:** each guide is now linked from its service
+  and area pages and from related guides, not just the blog list.
+- **Area pages load faster on phones** - the map now loads only when tapped.
+- Contact, services and areas pages given proper content; structured data
+  (the information Google reads about the business) corrected and expanded.
+
 ## Initial build (September 2026)
 
 Full local-SEO-focused Next.js rebuild of ivanexteriorcleaning.co.uk. See

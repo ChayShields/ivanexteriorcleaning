@@ -23,8 +23,8 @@ export default function Header() {
             className="rounded-full"
             priority
           />
-          <span className="text-lg font-bold tracking-tight text-navy-900 sm:text-xl">
-            Ivan&apos;s Exterior Cleaning
+          <span className="text-base font-bold leading-tight tracking-tight text-navy-900 sm:text-xl">
+            Ivan&apos;s Exterior Cleaning Services
           </span>
         </Link>
 

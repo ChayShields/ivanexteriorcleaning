@@ -4,7 +4,12 @@ export interface BlogPost {
   slug: string;
   title: string;
   excerpt: string;
+  // Search-result description when the excerpt is longer than ~155 chars.
+  metaDescription?: string;
   publishedAt: string;
+  // Set when a post's content changes, so the sitemap and schema report a
+  // real freshness date instead of the build time.
+  updatedAt?: string;
   relatedServices?: ServiceSlug[];
   relatedAreas?: AreaSlug[];
   body: { heading?: string; paragraphs: string[] }[];
@@ -17,12 +22,13 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Coastal weather, overhanging trees and roof pitch all change how often your gutters actually need clearing. Here's how to work out a sensible schedule.",
     publishedAt: "2026-08-18",
-    relatedServices: ["gutter-clearing"],
+    updatedAt: "2026-09-26",
+    relatedServices: ["gutter-cleaning"],
     relatedAreas: ["lowestoft", "kessingland", "pakefield"],
     body: [
       {
         paragraphs: [
-          "Most homes in and around Lowestoft, Kessingland and Pakefield get by with a gutter clear twice a year — once in late spring after the trees have finished shedding blossom and pollen, and once in autumn after the leaves come down. But that's a starting point, not a rule, and a few local factors push that number up.",
+          "Most homes in and around [Lowestoft](/areas-we-serve/lowestoft), [Kessingland](/areas-we-serve/kessingland) and [Pakefield](/areas-we-serve/pakefield) get by with a gutter clear twice a year — once in late spring after the trees have finished shedding blossom and pollen, and once in autumn after the leaves come down. But that's a starting point, not a rule, and a few local factors push that number up.",
         ],
       },
       {
@@ -46,7 +52,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "Getting it checked",
         paragraphs: [
-          "If you're not sure where your property sits, the simplest option is to have it looked at. We clear gutters across Lowestoft, Kessingland and Pakefield and will always give you an honest read on how often you actually need it, rather than upselling a schedule you don't need. See our gutter cleaning page for what's included, or get in touch for a free quote.",
+          "If you're not sure where your property sits, the simplest option is to have it looked at. We clear gutters across Lowestoft, Kessingland and Pakefield and will always give you an honest read on how often you actually need it, rather than upselling a schedule you don't need. See our [gutter cleaning page](/gutter-cleaning) for what's included (prices start from £60), or get in touch for a free quote. If it's the black staining on the outside of your gutters that bothers you rather than blockages, that's a different job - see [gutter cleaning vs soffit and fascia cleaning](/blog/gutter-clearing-vs-gutter-cleaning-whats-the-difference).",
         ],
       },
     ],
@@ -57,6 +63,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Moss, dark staining and slippery patches aren't just cosmetic. Here's what to look for and why leaving it too long makes the job harder.",
     publishedAt: "2026-08-25",
+    updatedAt: "2026-09-26",
     relatedServices: ["driveway-patio-cleaning"],
     relatedAreas: ["lowestoft", "kessingland", "pakefield"],
     body: [
@@ -98,7 +105,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "What we do about it",
         paragraphs: [
-          "We pressure wash driveways and patios across Lowestoft, Kessingland and Pakefield, including weed and moss removal from the joints, with optional sanding to help slow down regrowth. Get in touch for a free, no-obligation quote.",
+          "We [pressure wash driveways and patios](/driveway-patio-cleaning) across Lowestoft, [Kessingland](/areas-we-serve/kessingland) and [Pakefield](/areas-we-serve/pakefield), including weed and moss removal from the joints, with optional sanding to help slow down regrowth. Get in touch for a free, no-obligation quote.",
         ],
       },
     ],
@@ -109,6 +116,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Salt spray off the North Sea settles on glass faster than most people expect. Here's why properties near the seafront often need shorter cleaning cycles.",
     publishedAt: "2026-09-01",
+    updatedAt: "2026-09-26",
     relatedServices: ["window-cleaning"],
     relatedAreas: ["lowestoft", "kessingland", "pakefield", "carlton-colville"],
     body: [
@@ -120,7 +128,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "Salt residue dries differently to normal dirt",
         paragraphs: [
-          "Ordinary road dust and rain marks wash off fairly evenly. Salt spray dries as a fine, slightly sticky film that attracts more dust and grime to it, so windows near the coast go from clean to hazy noticeably faster than windows a few miles inland in, say, Carlton Colville.",
+          "Ordinary road dust and rain marks wash off fairly evenly. Salt spray dries as a fine, slightly sticky film that attracts more dust and grime to it, so windows near the coast go from clean to hazy noticeably faster than windows a few miles inland in, say, Carlton Colville (we've written about [what homes there actually deal with](/blog/exterior-cleaning-in-carlton-colville-what-to-expect)).",
         ],
       },
       {
@@ -138,47 +146,50 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "Book a round",
         paragraphs: [
-          "We run regular window cleaning rounds across Lowestoft, Kessingland and Pakefield and can recommend a sensible frequency based on exactly where your property sits. Get in touch for a free quote.",
+          "We run regular [window cleaning rounds across Lowestoft](/window-cleaning), Kessingland and Pakefield and can recommend a sensible frequency based on exactly where your property sits. Wondering what it costs? See [how much window cleaning costs in Lowestoft](/blog/how-much-does-window-cleaning-cost-in-lowestoft), or get in touch for a free quote.",
         ],
       },
     ],
   },
   {
     slug: "gutter-clearing-vs-gutter-cleaning-whats-the-difference",
-    title: "Gutter Clearing vs Gutter Cleaning: What's the Difference?",
+    title: "Gutter Cleaning vs Soffit & Fascia Cleaning: What's the Difference?",
     excerpt:
-      "The two names sound interchangeable, but they're different jobs solving different problems. Here's what each one actually covers, and why Lowestoft homes often need both.",
+      "One clears what's inside your gutters, the other washes the outside of your roofline. Here's what each one covers, and why Lowestoft homes often need both.",
+    metaDescription:
+      "Gutter cleaning clears blocked gutters; soffit and fascia cleaning washes the outside of your roofline. What each covers, and why many homes need both.",
     publishedAt: "2026-09-14",
-    relatedServices: ["gutter-clearing", "gutter-cleaning"],
+    updatedAt: "2026-09-26",
+    relatedServices: ["gutter-cleaning", "soffit-fascia-cleaning"],
     relatedAreas: ["lowestoft", "kessingland", "pakefield", "carlton-colville"],
     body: [
       {
         paragraphs: [
-          "\"Can you clean my gutters?\" is one of the most common enquiries we get from homes across Lowestoft, Kessingland, Pakefield and Carlton Colville, and it's genuinely ambiguous — because gutter clearing and gutter cleaning are two different jobs. Mixing them up usually means booking the wrong one and being disappointed with the result, so it's worth being clear on what each actually does before you call anyone.",
+          "\"Can you clean my gutters?\" is one of the most common enquiries we get from homes across Lowestoft, Kessingland, Pakefield and Carlton Colville, and it can mean two different jobs. Most people mean clearing out blocked gutters - but some mean the black staining on the outside of the roofline. Mixing them up usually means booking the wrong one, so it's worth being clear on what each actually does before you call anyone.",
         ],
       },
       {
-        heading: "Gutter clearing: the functional job",
+        heading: "Gutter cleaning (or clearing): the functional job",
         paragraphs: [
-          "Gutter clearing is about what's inside the gutter — leaves, moss, moss seed, and general debris that builds up and blocks water from flowing away properly. Left unchecked, a blocked gutter overflows during rain, which can lead to damp patches on walls, rotting fascia boards, and in bad cases, water getting in under the roofline. We use a high-reach vacuum system to clear the gutter run and the downpipes, and send before-and-after photos so you can see exactly what came out.",
+          "[Gutter cleaning](/gutter-cleaning) - sometimes called gutter clearing - is about what's inside the gutter — leaves, moss, moss seed, and general debris that builds up and blocks water from flowing away properly. Left unchecked, a blocked gutter overflows during rain, which can lead to damp patches on walls, rotting fascia boards, and in bad cases, water getting in under the roofline. We use a high-reach vacuum system to clear the gutter run and the downpipes, and send before-and-after photos so you can see exactly what came out. Prices start from £60.",
         ],
       },
       {
-        heading: "Gutter cleaning: the cosmetic wash",
+        heading: "Soffit and fascia cleaning: the cosmetic wash",
         paragraphs: [
-          "Gutter cleaning is about what's on the outside — the black 'tiger-stripe' staining and general road grime that builds up on the uPVC face of the gutter, soffits and fascias over time. It's a soft-wash exterior clean, not a debris removal job, and it doesn't touch what's inside the gutter run at all. It's one of the biggest visible upgrades a tired-looking front elevation can get, often noticeable from the street.",
+          "[Soffit and fascia cleaning](/soffit-fascia-cleaning) is about what's on the outside — the black 'tiger-stripe' staining and general road grime that builds up on the uPVC face of the gutter, soffits and fascias over time. It's a soft-wash exterior clean, not a debris removal job, and it doesn't touch what's inside the gutter run at all. It's one of the biggest visible upgrades a tired-looking front elevation can get, often noticeable from the street.",
         ],
       },
       {
         heading: "Do you need one or both?",
         paragraphs: [
-          "Plenty of properties only need one or the other. A newer property with well-maintained uPVC but overhanging trees might only need regular clearing. A property with clean-running gutters but years of staining on the fascia might only need the cosmetic wash. But if it's been years since either was done, most homes in Lowestoft, Kessingland, Pakefield and Carlton Colville benefit from both — clear first, then clean, since a clear gutter run makes the exterior wash more effective and the results last longer.",
+          "Plenty of properties only need one or the other. A newer property with well-maintained uPVC but overhanging trees might only need a regular gutter clean ([how often depends on a few local factors](/blog/how-often-should-you-clean-your-gutters)). A property with clean-running gutters but years of staining on the fascia might only need the cosmetic wash. But if it's been years since either was done, most homes in Lowestoft, Kessingland, Pakefield and Carlton Colville benefit from both — clear first, then clean, since a clear gutter run makes the exterior wash more effective and the results last longer.",
         ],
       },
       {
         heading: "Get the right one booked",
         paragraphs: [
-          "If you're not sure which one your property actually needs, tell us what you're seeing — overflow during rain points to clearing, staining and grime points to cleaning — and we'll recommend the right job rather than upselling one you don't need. See our gutter clearing and gutter cleaning pages for full details, or get in touch for a free quote.",
+          "If you're not sure which one your property actually needs, tell us what you're seeing — overflow during rain points to a gutter clean, staining and grime on the uPVC points to a soffit and fascia wash — and we'll recommend the right job rather than upselling one you don't need. See our [gutter cleaning](/gutter-cleaning) and [soffit and fascia cleaning](/soffit-fascia-cleaning) pages for full details, or get in touch for a free quote.",
         ],
       },
     ],
@@ -188,13 +199,16 @@ export const blogPosts: BlogPost[] = [
     title: "Exterior Cleaning in Carlton Colville: What Local Homes Actually Need",
     excerpt:
       "Carlton Colville sits back from the coast, so the grime is different to Lowestoft's seafront — road film and organic debris rather than salt spray. Here's what that means for upkeep.",
+    metaDescription:
+      "Carlton Colville homes deal with road film and leaves rather than salt spray. What that means for windows, gutters and driveways, from a local cleaner.",
     publishedAt: "2026-09-14",
-    relatedServices: ["window-cleaning", "gutter-clearing"],
+    updatedAt: "2026-09-26",
+    relatedServices: ["window-cleaning", "gutter-cleaning"],
     relatedAreas: ["carlton-colville"],
     body: [
       {
         paragraphs: [
-          "Most of our advice for the coast is built around salt spray — but Carlton Colville sits back from the seafront along the A146, and the grime homes there deal with comes from different sources entirely. If you've read our advice for Lowestoft or Pakefield and it hasn't quite matched what you're seeing on your own windows or gutters, this is probably why.",
+          "Most of our advice for the coast is built around [salt spray](/blog/why-coastal-homes-need-more-frequent-window-cleaning) — but [Carlton Colville](/areas-we-serve/carlton-colville) sits back from the seafront along the A146, and the grime homes there deal with comes from different sources entirely. If you've read our advice for Lowestoft or Pakefield and it hasn't quite matched what you're seeing on your own windows or gutters, this is probably why.",
         ],
       },
       {
@@ -218,7 +232,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "Book a round in Carlton Colville",
         paragraphs: [
-          "We run regular window cleaning in Carlton Colville and gutter clearing in Carlton Colville for homes right up to the East Anglia Transport Museum on Chapel Road, and for the newer estates further west, on the same round as the rest of the coast. Get in touch for a free quote.",
+          "We run regular [window cleaning](/window-cleaning) and [gutter cleaning](/gutter-cleaning) in Carlton Colville for homes right up to the East Anglia Transport Museum on Chapel Road, and for the newer estates further west, on the same round as the rest of the coast. Get in touch for a free quote.",
         ],
       },
     ],
@@ -228,7 +242,10 @@ export const blogPosts: BlogPost[] = [
     title: "How Much Does Window Cleaning Cost in Lowestoft?",
     excerpt:
       "It's the question we get asked most, and the honest answer is: it depends on your property. Here's exactly what goes into a quote, and why we don't work from a fixed price list.",
+    metaDescription:
+      "What window cleaning costs in Lowestoft depends on your property. What goes into a fair quote, one-off vs regular rounds, and why there's no call-out fee.",
     publishedAt: "2026-09-15",
+    updatedAt: "2026-09-26",
     relatedServices: ["window-cleaning"],
     relatedAreas: ["lowestoft", "kessingland", "pakefield", "carlton-colville"],
     body: [
@@ -258,13 +275,13 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "Does location change the price?",
         paragraphs: [
-          "Not directly — we cover Lowestoft, Kessingland, Pakefield and Carlton Colville on the same regular round, so there's no call-out premium for any of the four. Where location does matter is frequency: properties closer to the seafront pick up salt residue faster and often benefit from a shorter cleaning cycle, which affects how often you're booking us rather than what each visit costs.",
+          "Not directly — we cover Lowestoft, Kessingland, Pakefield and Carlton Colville on the same regular round, so there's no call-out premium for any of the four. Where location does matter is frequency: properties closer to the seafront pick up salt residue faster and often benefit from a shorter cleaning cycle ([here's why](/blog/why-coastal-homes-need-more-frequent-window-cleaning)), which affects how often you're booking us rather than what each visit costs.",
         ],
       },
       {
         heading: "Getting an accurate price",
         paragraphs: [
-          "The only way to get a number that actually means something is a quick chat about your property. Get in touch for a free, no-obligation quote — we'll give you an honest figure upfront, with no hidden extras added once we turn up. See our window cleaning page for what's included in every visit.",
+          "The only way to get a number that actually means something is a quick chat about your property. Get in touch for a free, no-obligation quote — we'll give you an honest figure upfront, with no hidden extras added once we turn up. See our [window cleaning page](/window-cleaning) for what's included in every visit.",
         ],
       },
     ],
@@ -273,4 +290,31 @@ export const blogPosts: BlogPost[] = [
 
 export function getPostBySlug(slug: string) {
   return blogPosts.find((post) => post.slug === slug);
+}
+
+const newestFirst = (a: BlogPost, b: BlogPost) => (a.publishedAt < b.publishedAt ? 1 : -1);
+
+// Posts tagged with a service - listed on that service page, so every new
+// post is linked from its service page automatically.
+export function getPostsForService(slug: ServiceSlug) {
+  return blogPosts.filter((post) => post.relatedServices?.includes(slug)).sort(newestFirst);
+}
+
+// Posts tagged with an area - listed on that area page.
+export function getPostsForArea(slug: AreaSlug) {
+  return blogPosts.filter((post) => post.relatedAreas?.includes(slug)).sort(newestFirst);
+}
+
+// Sibling posts for the foot of a post: those sharing a service first, then
+// those sharing an area, newest first. Older posts therefore link to newer
+// related ones and back, without editing each post by hand.
+export function getRelatedPosts(post: BlogPost, limit = 3) {
+  const others = blogPosts.filter((other) => other.slug !== post.slug);
+  const sharesService = (other: BlogPost) =>
+    other.relatedServices?.some((slug) => post.relatedServices?.includes(slug)) ?? false;
+  const sharesArea = (other: BlogPost) =>
+    other.relatedAreas?.some((slug) => post.relatedAreas?.includes(slug)) ?? false;
+  const byService = others.filter(sharesService).sort(newestFirst);
+  const byArea = others.filter((other) => !sharesService(other) && sharesArea(other)).sort(newestFirst);
+  return [...byService, ...byArea].slice(0, limit);
 }

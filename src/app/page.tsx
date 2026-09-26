@@ -21,7 +21,7 @@ export default function Home() {
               Window, Gutter &amp; Driveway Cleaning in Lowestoft
             </h1>
             <p className="mt-4 max-w-xl text-lg text-navy-800/80">
-              Window cleaning, gutter clearing, gutter and fascia cleaning,
+              Window cleaning, gutter cleaning, soffit and fascia cleaning,
               and driveway &amp; patio pressure washing for homes and
               businesses across Lowestoft, Kessingland, Pakefield and
               Carlton Colville. Fully insured, locally based, free quotes.
@@ -80,7 +80,10 @@ export default function Home() {
         <h2 className="text-2xl font-bold text-navy-900 sm:text-3xl">Our Services</h2>
         <p className="mt-2 max-w-2xl text-navy-800/80">
           Dedicated exterior cleaning services, each done properly with the
-          right kit for the job.
+          right kit for the job.{" "}
+          <Link href="/services" className="font-semibold text-teal-600 hover:underline">
+            Not sure which you need?
+          </Link>
         </p>
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((service) => (
@@ -99,7 +102,10 @@ export default function Home() {
           <p className="mt-2 max-w-2xl text-navy-800/80">
             Based in Lowestoft and covering Kessingland, Pakefield and
             Carlton Colville on regular rounds, plus Oulton Broad, Beccles
-            and Great Yarmouth.
+            and Great Yarmouth.{" "}
+            <Link href="/areas-we-serve" className="font-semibold text-teal-600 hover:underline">
+              How our rounds work
+            </Link>
           </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {areas.map((area) => (
@@ -133,9 +139,14 @@ export default function Home() {
               "Most customers go for a 4 or 8-weekly round depending on how exposed the property is to coastal salt spray. We can also do one-off cleans.",
           },
           {
-            question: "Do I need to be home for gutter clearing or window cleaning?",
+            question: "Do I need to be home for gutter cleaning or window cleaning?",
             answer:
               "No. As long as we can access the property, we can carry out most work without you needing to be in. We'll send before-and-after photos either way.",
+          },
+          {
+            question: "How much does gutter cleaning cost?",
+            answer:
+              "Gutter cleaning starts from £60. We confirm a fixed price for your property before any work starts. Window cleaning, soffit and fascia cleaning and driveway cleaning are quoted per property.",
           },
           {
             question: "Are you insured?",

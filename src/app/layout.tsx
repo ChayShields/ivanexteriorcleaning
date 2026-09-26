@@ -25,11 +25,13 @@ export const metadata: Metadata = {
     template: `%s | ${business.name}`,
   },
   description:
-    "Window cleaning, gutter clearing, gutter and fascia cleaning, and driveway & patio pressure washing across Lowestoft, Kessingland, Pakefield and Carlton Colville. Free, no-obligation quotes.",
+    "Window cleaning, gutter cleaning from £60, soffit and fascia cleaning and driveway pressure washing in Lowestoft and nearby villages. Fully insured.",
   keywords: [
+    "exterior cleaning Lowestoft",
     "window cleaning Lowestoft",
-    "gutter clearing Lowestoft",
     "gutter cleaning Lowestoft",
+    "soffit and fascia cleaning Lowestoft",
+    "pressure washing Lowestoft",
     "driveway cleaning Lowestoft",
     "exterior cleaning Kessingland",
     "exterior cleaning Pakefield",
@@ -40,15 +42,15 @@ export const metadata: Metadata = {
     locale: "en_GB",
     siteName: business.name,
     title: `${business.name} | Window, Gutter & Driveway Cleaning in Lowestoft`,
-    description:
-      "Window cleaning, gutter clearing, gutter and fascia cleaning, and driveway & patio pressure washing across Lowestoft, Kessingland, Pakefield and Carlton Colville.",
+    description: "Window cleaning, gutter cleaning from £60, soffit and fascia cleaning and driveway pressure washing in Lowestoft and nearby villages. Fully insured.",
     url: business.siteUrl,
+    images: [{ url: business.logoPath, width: 1254, height: 1254, alt: `${business.name} logo` }],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: `${business.name} | Window, Gutter & Driveway Cleaning in Lowestoft`,
-    description:
-      "Window cleaning, gutter clearing, gutter and fascia cleaning, and driveway & patio pressure washing across Lowestoft, Kessingland, Pakefield and Carlton Colville.",
+    description: "Window cleaning, gutter cleaning from £60, soffit and fascia cleaning and driveway pressure washing in Lowestoft and nearby villages. Fully insured.",
+    images: [business.logoPath],
   },
   alternates: {
     canonical: "/",

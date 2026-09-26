@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { blogPosts } from "@/lib/blog";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Tips & Advice",
   description:
     "Practical exterior cleaning advice for homeowners in Lowestoft, Kessingland, Pakefield and Carlton Colville — gutters, driveways, patios and windows.",
-  alternates: { canonical: "/blog" },
-};
+  path: "/blog",
+});
 
 export default function BlogIndexPage() {
   return (

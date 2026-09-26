@@ -2,10 +2,13 @@ import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { blogPosts, getPostBySlug } from "@/lib/blog";
+import { blogPosts, getPostBySlug, getRelatedPosts } from "@/lib/blog";
 import { business, getAreaBySlug, getServiceBySlug } from "@/lib/business";
 import CTABanner from "@/components/CTABanner";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import RichText, { plainText } from "@/components/RichText";
+import RelatedGuides from "@/components/RelatedGuides";
+import { pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
@@ -18,18 +21,16 @@ export async function generateMetadata(
   const post = getPostBySlug(slug);
   if (!post) return {};
 
-  return {
-    title: post.title,
-    description: post.excerpt,
-    alternates: { canonical: `/blog/${post.slug}` },
-    openGraph: {
-      title: post.title,
-      description: post.excerpt,
-      url: `/blog/${post.slug}`,
-      type: "article",
-      publishedTime: post.publishedAt,
-    },
-  };
+  const description = post.metaDescription ?? post.excerpt;
+  return pageMetadata({
+    // Long post titles drop the brand suffix so the question isn't cut off.
+    title: post.title.length > 52 ? { absolute: post.title } : post.title,
+    description,
+    path: `/blog/${post.slug}`,
+    type: "article",
+    publishedTime: post.publishedAt,
+    modifiedTime: post.updatedAt ?? post.publishedAt,
+  });
 }
 
 export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
@@ -48,15 +49,27 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
     .map((slug) => getAreaBySlug(slug))
     .filter((area): area is NonNullable<typeof area> => Boolean(area));
 
+  const url = `${business.siteUrl}/blog/${post.slug}`;
   const schema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.title,
     description: post.excerpt,
     datePublished: post.publishedAt,
-    author: { "@type": "Organization", name: business.legalName },
-    publisher: { "@type": "Organization", name: business.legalName },
+    dateModified: post.updatedAt ?? post.publishedAt,
+    mainEntityOfPage: url,
+    url,
+    image: `${business.siteUrl}${business.logoPath}`,
+    articleBody: post.body.flatMap((section) => section.paragraphs).map(plainText).join(" "),
+    author: { "@type": "Organization", "@id": `${business.siteUrl}/#business`, name: business.legalName },
+    publisher: {
+      "@type": "Organization",
+      "@id": `${business.siteUrl}/#business`,
+      name: business.legalName,
+      logo: { "@type": "ImageObject", url: `${business.siteUrl}${business.logoPath}` },
+    },
   };
+  const relatedPosts = getRelatedPosts(post);
 
   return (
     <>
@@ -89,7 +102,7 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
             )}
             {section.paragraphs.map((paragraph, pIndex) => (
               <p key={pIndex} className="mt-3 text-navy-800/90 leading-relaxed">
-                {paragraph}
+                <RichText text={paragraph} />
               </p>
             ))}
           </div>
@@ -139,6 +152,7 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
         </Link>
       </div>
     </article>
+    <RelatedGuides posts={relatedPosts} heading="More Guides" />
     <CTABanner />
     </>
   );
