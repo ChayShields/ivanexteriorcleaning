@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { CheckCircle2, ShieldCheck, Star, Tag } from "lucide-react";
@@ -19,6 +18,10 @@ import YouTubeEmbed from "@/components/YouTubeEmbed";
 export function generateStaticParams() {
   return services.map((service) => ({ service: service.slug }));
 }
+
+// Only the service slugs above exist. Anything else at the root (bot probes
+// like /wp-login.php) gets the static 404 instead of a server render.
+export const dynamicParams = false;
 
 export async function generateMetadata(
   props: PageProps<"/[service]">
@@ -137,7 +140,6 @@ export default async function ServicePage(props: PageProps<"/[service]">) {
     notFound();
   }
 
-  const nonce = (await headers()).get("x-nonce") ?? undefined;
   const reviews = await getGoogleReviews();
   const otherServices = services.filter((item) => item.slug !== service.slug);
   const otherAreas = areas.filter((area) => area.slug !== "lowestoft");
@@ -190,7 +192,6 @@ export default async function ServicePage(props: PageProps<"/[service]">) {
       />
       <script
         type="application/ld+json"
-        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
       <section className="bg-gradient-to-b from-sand-50 to-white">

@@ -1,9 +1,14 @@
 import { GA_MEASUREMENT_ID } from "@/lib/analytics";
 
-// Served as an external script so the site's nonce-based CSP never needs an
-// inline <script> for GA's config. The ID comes from the constant in
-// lib/analytics.ts and nothing from the request is ever interpolated into
-// the response, so there is no query-string input to inject through.
+// GA's config served as an external script instead of an inline <script>.
+// The ID comes from the constant in lib/analytics.ts and nothing from the
+// request is ever interpolated into the response, so there is no
+// query-string input to inject through.
+//
+// The response never changes, so it is generated once at build time and
+// served from the CDN rather than running a function on every page view.
+export const dynamic = "force-static";
+
 const body =
   "window.dataLayer=window.dataLayer||[];" +
   "function gtag(){dataLayer.push(arguments);}" +

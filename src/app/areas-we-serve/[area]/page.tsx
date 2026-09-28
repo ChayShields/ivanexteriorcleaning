@@ -17,6 +17,9 @@ export function generateStaticParams() {
   return areas.map((area) => ({ area: area.slug }));
 }
 
+// Only the areas above exist; any other slug gets the static 404.
+export const dynamicParams = false;
+
 export async function generateMetadata(
   props: PageProps<"/areas-we-serve/[area]">
 ): Promise<Metadata> {

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { blogPosts, getPostBySlug, getRelatedPosts } from "@/lib/blog";
@@ -13,6 +12,9 @@ import { pageMetadata } from "@/lib/seo";
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
 }
+
+// Only the posts above exist; any other slug gets the static 404.
+export const dynamicParams = false;
 
 export async function generateMetadata(
   props: PageProps<"/blog/[slug]">
@@ -34,7 +36,6 @@ export async function generateMetadata(
 }
 
 export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
-  const nonce = (await headers()).get("x-nonce") ?? undefined;
   const { slug } = await props.params;
   const post = getPostBySlug(slug);
 
@@ -83,7 +84,6 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
     <article className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
       <script
         type="application/ld+json"
-        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
       <p className="text-xs font-semibold uppercase tracking-wide text-teal-600">

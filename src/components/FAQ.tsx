@@ -1,12 +1,9 @@
-import { headers } from "next/headers";
-
 export interface FAQItem {
   question: string;
   answer: string;
 }
 
-export default async function FAQ({ items, heading = "Frequently Asked Questions" }: { items: FAQItem[]; heading?: string }) {
-  const nonce = (await headers()).get("x-nonce") ?? undefined;
+export default function FAQ({ items, heading = "Frequently Asked Questions" }: { items: FAQItem[]; heading?: string }) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -33,7 +30,6 @@ export default async function FAQ({ items, heading = "Frequently Asked Questions
       </dl>
       <script
         type="application/ld+json"
-        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
     </section>
