@@ -128,14 +128,14 @@ export default function Footer() {
       <div className="flex flex-col items-center gap-1 border-t border-white/10 px-4 py-4 text-center text-xs text-sand-100/50 sm:px-6">
         <span>© {new Date().getFullYear()} {business.legalName}. All rights reserved.</span>
         <span>
-          Designed and developed by{" "}
+          Designed and developed by Chay Shields at{" "}
           <a
-            href="https://hireme.link"
+            href="https://buildory.co.uk"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-amber-400"
           >
-            Chay Shields
+            Buildory
           </a>
         </span>
       </div>
